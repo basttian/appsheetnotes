@@ -2,7 +2,6 @@ import { unstable_getServerSession } from "next-auth/next";
 import { authOptions } from "./auth/[...nextauth]";
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import type { NextApiRequest, NextApiResponse } from "next";
-import { getSession } from "next-auth/react";
 
 export default async function handler(
   req: NextApiRequest,
@@ -22,7 +21,7 @@ export default async function handler(
     for(let i=0; i < rows.length; i++){
       data_alumnos.push({ 'rowNumber' : rows[i].rowNumber, 'id': parseInt(rows[i].SECCION), 'name': rows[i].ESTUDIANTE })
     }
-    res.send(data_alumnos);
+    res.send(JSON.stringify(data_alumnos,null,2));
    }
   res.send({
    error: "You must be signed in to view the protected content on this page.",
