@@ -29,7 +29,7 @@ export default async function handler(
         'trimestre': rows[i].Trimestre,
       })
     }
-    return res.send(data_notas);
+    return res.send(JSON.stringify(data_notas,null,2));
   }
   res.send({
    error: "You must be signed in to view the protected content on this page.",

@@ -21,7 +21,7 @@ export default async function handler(
     for(let i=0; i < rows.length; i++){
       data_alumnos.push({ 'rowNumber' : rows[i].rowNumber, 'id': parseInt(rows[i].SECCION), 'name': rows[i].ESTUDIANTE })
     }
-    res.send(JSON.stringify(data_alumnos,null,2));
+    return res.send(JSON.stringify(data_alumnos,null,2));
    }
   res.send({
    error: "You must be signed in to view the protected content on this page.",

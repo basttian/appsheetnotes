@@ -2,7 +2,6 @@ import { unstable_getServerSession } from "next-auth/next";
 import { authOptions } from "./auth/[...nextauth]";
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import type { NextApiRequest, NextApiResponse } from "next";
-import { getSession } from "next-auth/react";
 
 export default async function handler(
   req: NextApiRequest,
@@ -28,7 +27,8 @@ export default async function handler(
       let result:any[] = data_materias.filter(
       (asignaturas) => asignaturas.seccion === fetchData.clase );
 
-      res.send(JSON.stringify(result,null,2));
+      return res.send(JSON.stringify(result,null,2));
+
    }
   res.send({
    error: "You must be signed in to view the protected content on this page.",
