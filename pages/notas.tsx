@@ -99,31 +99,23 @@ function AdminNotas(props : Props){
   return (
 		<>
     <Layout loader={loadingSelect}>
-
-      <Box
-        display="flex"
-        alignItems="center"
-      >
-        <SelectLabels
+      <SelectLabels
           title="Clases"
           help="Seleccionar clase."
           onchange={onchangecloseaula}
           values={Aulas} />
-        <SelectLabels
+      <SelectLabels
           ref={mySelRef}
           title='Asignaturas'
           help='Seleccionar asignatura.'
           onchange={onchangecloseasignatura}
           values={asignaturaValues} />
-      </Box>
-
       <TableData
         loading={isLoading}
         student={columnA}
         clase={clase}
         asignatura={asignatura}
         notas={notas} />
-
     </Layout>
 		</>
   );
