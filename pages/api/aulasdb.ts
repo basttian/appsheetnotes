@@ -22,7 +22,7 @@ export default async function handler(
     for(let i=0; i < rows.length; i++){
       data_seccion.push({ 'id': rows[i].SECCION, 'name': rows[i].NOMBRE })
     }
-    res.send(data_seccion);
+    res.send(JSON.stringify(data_seccion,null,2));
    }
   res.send({
    error: "You must be signed in to view the protected content on this page.",

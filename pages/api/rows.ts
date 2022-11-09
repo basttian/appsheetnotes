@@ -106,7 +106,7 @@ export default async function handler(
       })
     }
 
-    return res.send(resultado);
+    return res.send(JSON.stringify(resultado,null,2));
   }
   res.send({
    error: "You must be signed in to view the protected content on this page.",

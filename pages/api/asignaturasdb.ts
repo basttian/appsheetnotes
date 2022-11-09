@@ -28,7 +28,7 @@ export default async function handler(
       let result:any[] = data_materias.filter(
       (asignaturas) => asignaturas.seccion === fetchData.clase );
 
-      res.send(result);
+      res.send(JSON.stringify(result,null,2));
    }
   res.send({
    error: "You must be signed in to view the protected content on this page.",
