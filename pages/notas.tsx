@@ -1,9 +1,6 @@
 import * as React from 'react';
-import type { NextPage } from 'next'
-
 import Layout from "../components/layout"
 import { useState, useRef, useEffect } from 'react';
-import { GetServerSideProps } from 'next';
 import Box from '@mui/material/Box';
 
 //components
