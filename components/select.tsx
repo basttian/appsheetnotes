@@ -36,7 +36,7 @@ export default class SelectLabels extends React.Component<any, any>{
 render(){
   return (
     <div>
-      <FormControl sx={{ m: 1, minWidth: 350 }}>
+      <FormControl sx={{ m: 0, minWidth: 350 }}>
         <InputLabel id="demo-simple-select-helper-label">{this.props.title}</InputLabel>
         <Select
           labelId="demo-simple-select-helper-label"

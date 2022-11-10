@@ -104,12 +104,14 @@ function AdminNotas(props : Props){
           help="Seleccionar clase."
           onchange={onchangecloseaula}
           values={Aulas} />
+      <br/>
       <SelectLabels
           ref={mySelRef}
           title='Asignaturas'
           help='Seleccionar asignatura.'
           onchange={onchangecloseasignatura}
           values={asignaturaValues} />
+      <br/>
       <TableData
         loading={isLoading}
         student={columnA}

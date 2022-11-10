@@ -102,15 +102,17 @@ function DataTable({...props}) {
 	  {
 	    field: 'estudiante',
 	    headerName: 'Estudiante',
-	    flex: 1,
+			flex: 2,
+	    minWidth: 200,
 	  },
 	  {
 	    field: 'T1',
 	    headerName: '1º Trimestre',
+			description:'1º Trimestre',
 	    type: 'number',
 	    editable: true,
 	    flex: 1,
-	    minWidth: 100,
+	    minWidth: 50,
 	    valueOptions:notas.map((items)=>{
 					return items.CELDASTR1
 			})
@@ -118,10 +120,11 @@ function DataTable({...props}) {
 	  {
 	    field: 'T2',
 	    headerName: '2º Trimestre',
+			description:'2º Trimestre',
 	    type: 'number',
 	    editable: true,
 	    flex: 1,
-	    minWidth: 100,
+	    minWidth: 50,
 			valueOptions:notas.map((items)=>{
 					return items.CELDASTR2;
 			})
@@ -130,10 +133,11 @@ function DataTable({...props}) {
 
 	    field: 'T3',
 	    headerName: '3º Trimestre',
+			description:'3º Trimestre',
 	    type: 'number',
 	    editable: true,
 	    flex: 1,
-	    minWidth: 100,
+	    minWidth: 50,
 			valueOptions:notas.map((items)=>{
 					return items.CELDASTR3;
 			})
@@ -141,7 +145,7 @@ function DataTable({...props}) {
 	  {
 	    field: 'promedio',
 	    headerName: 'Promedio',
-	    description: 'Promedio solo con tres notas',
+	    description: 'Promedio',
 	    sortable: false,
 	    flex: 1,
 	    type: 'string',
@@ -242,15 +246,16 @@ function DataTable({...props}) {
 	let rows = notas;
 
   return (
-    <div style={{ height: 680, width: '100%' }}>
+    <div style={{ height: 500, width: '100%' }}>
       <DataGrid
 			  isCellEditable={(params: GridCellParams)=>{
 					return isCellEdit;
 				}}
 				rows={rows}
         columns={columns}
-        pageSize={10}
-        rowsPerPageOptions={[10]}
+        //pageSize={10}
+        //rowsPerPageOptions={[10]}
+				rowsPerPageOptions={[5, 10, 25, 50, 100]}
 				onCellKeyDown={Save}
 				components={{
 					LoadingOverlay: LinearProgress,
